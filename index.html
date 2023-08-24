@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In and Sign Up Form </title>
+    <link rel="stylesheet" href="/public/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h1 id="heading1">Sign Up</h1>
+            <form>
+                <div class="inputs">
+
+                    <div class="input" id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Your name">
+                    </div>
+                    
+                    <div class="input">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Your email" required>
+                    </div>
+
+                    <div class="input">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" placeholder="Enter your password" required>
+                    </div>
+                     <p><a href="#">Forgot Password?</a></p>
+                </div>
+                <div class="btn">
+                    <button type="button" id="signupBtn">Sign Up</button>
+                    <button type="button" class="disable" id="signinBtn">Sign In</button>
+                </div>
+
+                <div class="btn1 ">
+                    <button type="button" id="submitbtn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        let signupBtn=document.getElementById("signupBtn");
+        let signinBtn=document.getElementById("signinBtn");
+        let nameField=document.getElementById("nameField");
+        let heading1=document.getElementById("heading1");
+
+        signinBtn.onclick=function(){
+            nameField.style.maxHeight="0";
+            heading1.innerHTML="Sign In";
+            signupBtn.classList.add("disable");
+            signinBtn.classList.remove("disable");
+        }
+        signupBtn.onclick=function(){
+            nameField.style.maxHeight="60px";
+            heading1.innerHTML="Sign Up";
+            signupBtn.classList.remove("disable");
+            signinBtn.classList.add("disable");
+        }
+
+        let submitbtn = document.getElementById("submitbtn");
+
+        submitbtn.onclick =function(){
+            submitbtn.classList.add("disable");
+            location.href='/public/home.html';
+        }
+    </script>
+    
+
+
+</body>
+</html>
